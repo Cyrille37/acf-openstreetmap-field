@@ -497,9 +497,7 @@ class MapInput extends Backbone.View {
 				if ( this.config.max_markers === 0 ) {
 
 					return this.map.fitBounds( e.geocode.bbox );
-
 				}
-
 
 				if ( this.canAddMarker ) {
 					// infinite markers or markers still in range
@@ -513,9 +511,13 @@ class MapInput extends Backbone.View {
 					model.set( marker_data );
 				}
 
-				this.el.dispatchEvent( new CustomEvent( 'osm-editor/marker-geocode-result', { detail: {  model, geocode: e.geocode, previousGeocode } } ), { bubbles: true } )
+				if ( this.maxMarkers === 1 ) {
+					this.map.setView( latlng, 17 );
+				} else {
+					this.map.setView( latlng, this.map.getZoom() ); // keep zoom, might be confusing else
+				}
 
-				this.map.setView( latlng, this.map.getZoom() ); // keep zoom, might be confusing else
+				this.el.dispatchEvent( new CustomEvent( 'osm-editor/marker-geocode-result', { detail: {  model, geocode: e.geocode, previousGeocode } } ), { bubbles: true } )
 
 			})
 			.addTo( this.map );
