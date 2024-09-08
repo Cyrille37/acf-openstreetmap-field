@@ -155,11 +155,11 @@ class Core extends Plugin {
 				 				=> __( 'Fit markers into view', 'acf-openstreetmap-field' ),
 				'address_format'	=> [
 					/* translators: address format for marker labels (street level). Available placeholders {building} {road} {house_number} {postcode} {city} {town} {village} {hamlet} {state} {country} */
-					'street'	=> __( '{building} {road} {house_number}', 'acf-openstreetmap-field' ),
+					'street'	=> defined('ACF_OSM_I18N_ADDR_STREET') ? constant('ACF_OSM_I18N_ADDR_STREET') : __( '{building} {road} {house_number}', 'acf-openstreetmap-field' ),
 					/* translators: address format for marker labels (city level). Available placeholders {building} {road} {house_number} {postcode} {city} {town} {village} {hamlet} {state} {country} */
-					'city'		=> __( '{postcode} {city} {town} {village} {hamlet}', 'acf-openstreetmap-field' ),
+					'city'		=> defined('ACF_OSM_I18N_ADDR_CITY') ? constant('ACF_OSM_I18N_ADDR_CITY') :__( '{postcode} {city} {town} {village} {hamlet}', 'acf-openstreetmap-field' ),
 					/* translators: address format for marker labels (country level). Available placeholders {building} {road} {house_number} {postcode} {city} {town} {village} {hamlet} {state} {country} */
-					'country'	=> __( '{state} {country}', 'acf-openstreetmap-field' ),
+					'country'	=> defined('ACF_OSM_I18N_ADDR_COUNTRY') ? constant('ACF_OSM_I18N_ADDR_COUNTRY') :__( '{state} {country}', 'acf-openstreetmap-field' ),
 				]
 			],
 		];
