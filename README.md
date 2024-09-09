@@ -66,7 +66,7 @@ This plugin wouldn't have been possible without these awesome people and Project
 
 ## Cyrille37 changes
 
-### override Geocode results format
+### override Geocode results format #1
 
 Geocode results format are set with translation for localisation. But in some case, we don't mind localisation and want specific formats.
 
@@ -78,6 +78,6 @@ define('ACF_OSM_I18N_ADDR_CITY','{village} {town} {city}');
 define('ACF_OSM_I18N_ADDR_COUNTRY','');
 ```
 
-### Map view on marker after geocoding
+### Map view on marker after geocoding #2
 
 When `maxMarkers == 1` the map's view zoom is set on the marker and zoom aroud it.
