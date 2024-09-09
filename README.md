@@ -66,7 +66,7 @@ This plugin wouldn't have been possible without these awesome people and Project
 
 ## Cyrille37 changes
 
-### override Geocode results format #1
+### override Geocode results format
 
 Geocode results format are set with translation for localisation. But in some case, we don't mind localisation and want specific formats.
 
@@ -78,6 +78,11 @@ define('ACF_OSM_I18N_ADDR_CITY','{village} {town} {city}');
 define('ACF_OSM_I18N_ADDR_COUNTRY','');
 ```
 
+[Issue #1](https://github.com/Cyrille37/acf-openstreetmap-field/issues/1)
+
 ### Map view on marker after geocoding #2
 
 When `maxMarkers == 1` the map's view zoom is set on the marker and zoom aroud it.
+
+[Issue #2](https://github.com/Cyrille37/acf-openstreetmap-field/issues/2)
+
