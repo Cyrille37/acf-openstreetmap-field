@@ -63,3 +63,21 @@ This plugin wouldn't have been possible without these awesome people and Project
  - Jan Pieter Waagmeester ([Leaflet Providers](https://github.com/leaflet-extras/leaflet-providers))
  - Per Liedman ([Leaflet Control Geocode](https://github.com/perliedman/leaflet-control-geocoder))
  - The entire [Leaflet](https://leafletjs.com/) Project
+
+## Cyrille37 changes
+
+### override Geocode results format
+
+Geocode results format are set with translation for localisation. But in some case, we don't mind localisation and want specific formats.
+
+So, in `wp-config.php` we can override the 3 formats for the address:
+
+```php
+define('ACF_OSM_I18N_ADDR_STREET','{building} {house_number} {road}');
+define('ACF_OSM_I18N_ADDR_CITY','{village} {town} {city}');
+define('ACF_OSM_I18N_ADDR_COUNTRY','');
+```
+
+### Map view on marker after geocoding
+
+When `maxMarkers == 1` the map's view zoom is set on the marker and zoom aroud it.
